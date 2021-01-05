@@ -7,7 +7,7 @@ public class Utils {
     final static String LOGIN_URL = "http://localhost:8000/accounts/login/";
     final static String CONTENT_DIR_URL = "http://localhost:8000/";
     final static int START_PAGE = 1;
-    final static int END_PAGE = 30;
+    final static int END_PAGE = 10;
 
     final static String CHROME_DRIVER_LOCATION = "chromedriver.exe";
     public static void sleep(int sleep_dur){

@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,12 @@ public class ContentDir extends PageObject{
     }
 
     public List<String> getContentHrefs(){
-        return new ArrayList<String>();
+        List<String> res=new ArrayList<String>();
+        List<WebElement> hrefElements = driver.findElements(By.className("content-href"));
+        for(var element:hrefElements){
+            res.add(element.getAttribute("href"));
+        }
+        return res;
     }
 
     public int resState(){
@@ -25,8 +31,10 @@ public class ContentDir extends PageObject{
             }
         }
         catch (NoSuchElementException e){
+            return 10;
         }
 
-        return 10;
+        return 0;
+
     }
 }
